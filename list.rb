@@ -16,6 +16,18 @@ class List
         incomplete_task_names << task.name
       end
     end
-    return incomplete_task_names
+    incomplete_task_names
   end
+
+  def number_of_incomplete_tasks
+    return incomplete_tasks.length
+  end
+
+  def delete_complete_tasks #returns the NAMES of incomplete tasks
+    tasks.delete_if do |task|
+      task.complete
+    end
+  end
+
+
 end
